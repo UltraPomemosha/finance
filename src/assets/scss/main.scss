@@ -1,1 +1,32 @@
 @import "./_global";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  padding-block: 0;
+  margin-block: 0;
+  padding-inline: 0;
+  margin-inline: 0;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input {
+  border: 0;
+  outline: 0;
+  background-color: transparent;
+}
+
+button,
+label {
+  font: inherit;
+}

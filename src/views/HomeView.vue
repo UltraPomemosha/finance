@@ -1,8 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import UButton from '@c/ui/u-button/UButton.vue';
+</script>
 
 <template>
-  <main>
+  <main style="background-color: black;">
     <h1>This is a Home Page</h1>
+    <UButton style="margin: 0 auto;"/>
   </main>
 </template>
 
