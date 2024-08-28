@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AppContainer from '@c/app/AppContainer/AppContainer.vue';
+import AppContainer from '@c/app/app-container/AppContainer.vue';
 </script>
 
 <template>
