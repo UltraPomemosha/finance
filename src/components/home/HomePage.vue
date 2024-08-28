@@ -54,6 +54,7 @@ const homePageTitleConfig: ITextConfig = {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    gap: 20px;
 
     grid-row: 1/-1;
     grid-column: 2/2;
