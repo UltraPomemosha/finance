@@ -10,7 +10,7 @@ const getClass = (config: ITextConfig) => {
 </script>
 
 <template>
-  <component :is="props.tag" :class="getClass(props.config)">
+  <component :is="`${props.tag}`" :class="getClass(props.config)">
     <slot>Text</slot>
   </component>
 </template>
