@@ -1,15 +1,13 @@
-<script setup lang="ts">
+<script lang='ts' setup>
 import AppContainer from '@c/app/AppContainer/AppContainer.vue';
 </script>
 
 <template>
   <main>
-    <AppContainer>
-      <h1>This is a Home Page</h1>
-    </AppContainer>
+    <AppContainer></AppContainer>
   </main>
 </template>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
 /* */
 </style>
