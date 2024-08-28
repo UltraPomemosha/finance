@@ -1,11 +1,12 @@
 <script setup lang="ts">
 import AppContainer from '@c/app/app-container/AppContainer.vue';
+import HomePage from '@c/home/HomePage.vue';
 </script>
 
 <template>
   <main>
     <AppContainer>
-      <h1>This is a Home Page</h1>
+      <HomePage/>
     </AppContainer>
   </main>
 </template>
