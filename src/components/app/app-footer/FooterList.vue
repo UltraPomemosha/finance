@@ -37,6 +37,9 @@ const listLinkTitleConfig: ITextConfig = {
   width: max-content;
   &__item {
     color: $tertiary-color;
+    :deep(*) {
+      color: $tertiary-color;
+    }
     &:not(:first-child) {
       margin-top: 8px;
     }

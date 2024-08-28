@@ -4,7 +4,7 @@ import type { ITextConfig, ITextProps } from './support';
 const props = defineProps<ITextProps>();
 
 const getClass = (config: ITextConfig) => {
-  return `text-${config.size}${config['weight'] ? '-' + config.weight! : ''}`
+  return `text-${config.size}${config['weight'] ? '-' + config.weight! : ''} u-text`
 }
 
 </script>
@@ -16,6 +16,8 @@ const getClass = (config: ITextConfig) => {
 </template>
 
 <style lang='scss' scoped>
-/* */
+.u-text {
+  color: $primary-color;
+}
 </style>
 

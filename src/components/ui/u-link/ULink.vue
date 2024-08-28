@@ -2,7 +2,7 @@
 import UText from '@c/ui/u-text/UText.vue';
 import type { IULinkProps } from './support';
 
-const tag: HTMLElementTagNameMap = 'span' as unknown as HTMLElementTagNameMap
+const tag: HTMLElementTagNameMap = "span" as unknown as HTMLElementTagNameMap
 const props = defineProps<IULinkProps>()
 </script>
 
@@ -24,15 +24,21 @@ const props = defineProps<IULinkProps>()
 .u-link {
   padding: $safe-padding;
   display: block;
-  color: $primary-color;
-  transition: color 0.3s linear;
+
+  &:deep(span) {
+    transition: color 0.3s linear;
+  }
 
   &:hover {
-    color: $secondary-color;
+    &:deep(span) {
+      color: $secondary-color;
+    }
   }
 
   &.router-link-active {
-    color: $secondary-color;
+    &:deep(span) {
+      color: $secondary-color;
+    }
   }
 }
 </style>

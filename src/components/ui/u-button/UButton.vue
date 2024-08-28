@@ -25,12 +25,12 @@ const tag = "span" as unknown as HTMLElementTagNameMap
   padding: 8px 25px;
   display: block;
   
-  color: $white-smoke-color;
   border-radius: 20px;
   background-color: $secondary-color;
 
   &__title {
     display: inline-block;
+    color: $white-smoke-color;
   }
 }
 </style>

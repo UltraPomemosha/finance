@@ -7,7 +7,7 @@ import { MENU } from './support';
   <nav>
     <ul class="menu">
       <li v-for="{title, to} in MENU" :key="title">
-        <ULink type="link" :to="to" :title-config="{size: 20}">{{ title }}</ULink>
+        <ULink type="link" :to="to" :title-config="{size: 20}" class="menu__link">{{ title }}</ULink>
       </li>
     </ul>
   </nav>
@@ -19,5 +19,11 @@ import { MENU } from './support';
   flex-flow: row nowrap;
   align-items: center;
   gap: 20px;
+
+  &__link {
+    &:deep(span) {
+      color: $primary-color;
+    }
+  }
 }
 </style>
