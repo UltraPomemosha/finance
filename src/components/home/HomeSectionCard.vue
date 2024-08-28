@@ -1,42 +1,61 @@
-<script lang='ts' setup>
-import { tag } from '@/utils/tag';
-import type { ITextProps } from '@c/ui/u-text/support';
-import type { ISectionCard } from './support';
+<script lang="ts" setup>
+import { tag } from "@/utils/tag";
+import type { ITextProps } from "@c/ui/u-text/support";
+import UText from "@c/ui/u-text/UText.vue";
+import UIconGet from "../ui/u-icon/UIconGet.vue";
+import type { ISectionCard } from "./support";
 
-const props = defineProps<ISectionCard>();
+const props = defineProps<ISectionCard>()
 
 const cardTitle: ITextProps = {
-  tag: tag('h2'),
+  tag: tag("h2"),
   config: {
-    size: 24
-  }
+    size: 24,
+  },
 }
 
 const cardDescription: ITextProps = {
-  tag: tag('p'),
+  tag: tag("p"),
   config: {
-    size: 16
-  }
+    size: 16,
+  },
 }
-
 </script>
 
 <template>
   <article class="section-card">
-    <slot></slot>
-    <UText :tag="cardTitle.tag" :config="cardTitle.config">
+    <UIconGet :icon-name="props.iconName" :size="40" class="section-card__icon" />
+    <UText :tag="cardTitle.tag" :config="cardTitle.config" class="section-card__title">
       {{ props.title }}
     </UText>
-    <UText :tag="cardDescription.tag" :config="cardDescription.config">
+    <UText :tag="cardDescription.tag" :config="cardDescription.config" class="section-card__description">
       {{ props.description }}
     </UText>
   </article>
 </template>
 
-<style lang='scss' scoped>
-:slotted(img) {
-  grid-column: 1/1;
-  grid-row: 1/2;
+<style lang="scss" scoped>
+.section-card {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 20px;
+  column-gap: 40px;
+
+  &__icon {
+    grid-row: 1/3;
+    align-self: center;
+    margin-top: -20px; // {icon size} / 2
+  }
+
+  &__title {
+    color: $secondary-color;
+    grid-column: 2/2;
+  }
+
+  &__description {
+    color: $primary-color;
+    grid-column: 2/2;
+  }
 }
 </style>
-
