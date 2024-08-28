@@ -1,11 +1,24 @@
-$color-50: #edfff6;
-$color-100: #d5ffed;
-$color-200: #aeffdb;
-$color-300: #70ffc0;
-$color-400: #2bfd9e;
-$color-500: #00ff8c;
-$color-600: #00c065;
-$color-700: #009652;
-$color-800: #067544;
-$color-900: #07603a;
-$color-950: #00371f;
+// global
+$safe-padding: 5px;
+$normal-gap: 10px;
+$header-height: 95px;
+
+// colors
+$primary-color: rgb(51, 51, 51);
+$secondary-color: rgb(0, 68, 204);
+$tertiary-color: rgb(238, 238, 241);
+$white-smoke-color: rgb(245, 245, 245);
+$white-color: rgb(255, 255, 255);
+
+:root {
+  --primary-color: rgb(51, 51, 51);
+  --secondary-color: rgb(0, 68, 204);
+  --tertiary-color: rgb(238, 238, 241);
+  --white-smoke-color: rgb(245, 245, 245);
+  --white-color: rgb(255, 255, 255);
+
+  --default-star-logo-color: #0d84eb;
+  --default-text-logo-color: #000;
+}
+
+$bg-gray-color: rgb(119, 119, 119);

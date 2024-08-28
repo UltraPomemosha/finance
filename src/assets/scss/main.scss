@@ -30,3 +30,26 @@ button,
 label {
   font: inherit;
 }
+
+ul,
+li {
+  list-style: none;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+  font-family: "Varta", sans-serif;
+}
+
+#app {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  min-height: 100%;
+}
+
+main {
+  padding-top: $safe-padding;
+}
