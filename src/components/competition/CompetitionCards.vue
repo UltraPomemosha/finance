@@ -43,7 +43,7 @@ import CompetitionCard from "./CompetitionCard.vue";
           <li>
             <UText :tag="tag('p')" :config="{ size: 36 }" class="text">📍 Где?</UText>
             &nbsp;
-            <ULink type="a" :title-config="{ size: 36 }" to="#" class="text clickable-link">Жми сюда</ULink>
+            <ULink type="link" :title-config="{ size: 36 }" to="/competition/1" class="text clickable-link">Жми сюда</ULink>
           </li>
         </ul>
       </template>
