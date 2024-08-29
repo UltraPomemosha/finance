@@ -38,6 +38,7 @@ const pageDescription: ITextProps = {
     width: 100%;
     min-width: 280px;
     font-family: $secondary-font;
+    text-align: left;
   }
 
   &__subtitle {
