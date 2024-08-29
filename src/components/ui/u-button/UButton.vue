@@ -1,22 +1,8 @@
-<script lang="ts" setup>
-import UText from "@c/ui/u-text/UText.vue";
-import type { ITextConfig } from "@c/ui/u-text/support";
-
-interface Props {
-  titleConfig?: ITextConfig
-}
-const props = withDefaults(defineProps<Props>(), {
-  titleConfig:() => ({size: 16})
-})
-
-const tag = "span" as unknown as HTMLElementTagNameMap
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <button class="u-button">
-    <UText :tag="tag" :config="props.titleConfig" class="u-button__title">
-      <slot>Button</slot>
-    </UText>
+    <slot>Button</slot>
   </button>
 </template>
 
@@ -24,13 +10,11 @@ const tag = "span" as unknown as HTMLElementTagNameMap
 .u-button {
   padding: 8px 25px;
   display: block;
-  
+
   border-radius: 20px;
   background-color: $secondary-color;
+  color: $white-smoke-color;
 
-  &__title {
-    display: inline-block;
-    color: $white-smoke-color;
-  }
+  @extend .text-16;
 }
 </style>

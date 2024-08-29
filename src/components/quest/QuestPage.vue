@@ -21,7 +21,6 @@ const initQuestState = (questions: IQuestion[]): IQuestState => {
 const questState: IQuestState = reactive(initQuestState(QUESTIONS))
 
 function submit() {
-  if (!isTestFinished.value) return
   questTimeStore.setTime("end")
   questResultsStore.setNewResult({
     title: "🌟 Квест по Финансовой грамотности! 🌟",
@@ -56,7 +55,7 @@ onMounted(() => {
       :key="question.title"
       class="quest-page__question"
     />
-    <UButton @click="submit" class="quest-page__button"> Отправить </UButton>
+    <UButton @click="submit" class="quest-page__button" :disabled="isTestFinished"> Отправить </UButton>
     <ULink type="link" :title-config="{ size: 20 }" to="/results" class="quest-page__go-to-results">
       Перейти к результатам
     </ULink>
