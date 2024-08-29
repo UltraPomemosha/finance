@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { UIconProps } from './support';
+import type { UIconProps } from '../support';
 
 const props = defineProps<UIconProps>();
 </script>
@@ -16,7 +16,6 @@ const props = defineProps<UIconProps>();
     <defs>
       <clipPath id="clip12_2014">
         <rect
-          id="f7:money-rubl-circle-fill"
           rx="19.500000"
           width="39.000000"
           height="39.000000"
@@ -27,7 +26,6 @@ const props = defineProps<UIconProps>();
       </clipPath>
     </defs>
     <rect
-      id="f7:money-rubl-circle-fill"
       rx="19.500000"
       width="39.000000"
       height="39.000000"

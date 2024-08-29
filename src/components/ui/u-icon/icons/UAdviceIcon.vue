@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { UIconProps } from "./support";
+import type { UIconProps } from "../support";
 
 const props = defineProps<UIconProps>()
 </script>

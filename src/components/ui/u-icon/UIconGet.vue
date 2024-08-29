@@ -7,7 +7,7 @@ interface Props {
 }
 const props = defineProps<Props & UIconProps>()
 
-const icon = computed(() => defineAsyncComponent(() => import(`./${props.iconName}.vue`)))
+const icon = computed(() => defineAsyncComponent(() => import(`./icons/${props.iconName}.vue`)))
 </script>
 
 <template>
