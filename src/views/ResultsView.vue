@@ -1,12 +1,12 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import AppContainer from '@c/app/app-container/AppContainer.vue';
-import HomePage from '@c/home/HomePage.vue';
+import ResultsPage from '@c/results/ResultsPage.vue';
 </script>
 
 <template>
   <main>
     <AppContainer>
-      <HomePage />
+      <ResultsPage />
     </AppContainer>
   </main>
 </template>

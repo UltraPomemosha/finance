@@ -1,16 +1,17 @@
-<script setup lang="ts">
+<script lang='ts' setup>
 import AppContainer from '@c/app/app-container/AppContainer.vue';
-import HomePage from '@c/home/HomePage.vue';
+import QuestPage from '@/components/quest/QuestPage.vue';
 </script>
 
 <template>
   <main>
     <AppContainer>
-      <HomePage />
+      <QuestPage />
     </AppContainer>
   </main>
 </template>
 
-<style lang="scss" scoped>
+<style lang='scss' scoped>
 /* */
 </style>
+

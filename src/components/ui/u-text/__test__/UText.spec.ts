@@ -4,7 +4,7 @@ import UText from "../UText.vue"
 import type { ITextConfig, ITextProps } from "../support"
 
 describe("u-text", () => {
-  it.only("u-text render test", async () => {
+  it("u-text render test", async () => {
     const CONFIG_WITHOUT_WEIGHT: ITextConfig = {
       size: 12,
     }
