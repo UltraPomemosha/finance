@@ -31,7 +31,6 @@ const props = defineProps<Props>()
 
 <style lang="scss" scoped>
 .variant-box {
-  margin-top: -6px;
   flex: 0 0 24px;
   width: 24px;
   height: 24px;

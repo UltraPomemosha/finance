@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import UTitle from "@c/ui/u-title/UTitle.vue"
-import QuestionVariant from "./QuestionVariant.vue"
-import { type IQuestion } from "./support"
+import UTitle from "@c/ui/u-title/UTitle.vue";
+import QuestionVariant from "./QuestionVariant.vue";
+import { type IQuestion } from "./support";
 
 interface Props extends Omit<IQuestion, "rightVariant">{
   isTestFinished: boolean
@@ -37,6 +37,9 @@ function onChangeVariant(e: Event) {
 
 <style lang="scss" scoped>
 .question {
+  &__title {
+    font-family: $secondary-font;
+  }
   &__variant {
     margin-top: 30px;
     width: max-content;
