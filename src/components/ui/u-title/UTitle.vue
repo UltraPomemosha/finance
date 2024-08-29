@@ -17,7 +17,7 @@ const props = defineProps<Props>()
   &._h1 {
     @extend .text-48;
     color: $secondary-color;
-    font-family: $secondary-color;
+    font-family: $secondary-font;
     text-align: center;
   }
   &._h2 {
