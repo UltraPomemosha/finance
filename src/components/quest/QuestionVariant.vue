@@ -5,6 +5,7 @@ interface Props {
   variant: string
   question: string
   selectedVariant: string
+  disabled: boolean
 }
 
 const props = defineProps<Props>()
@@ -17,6 +18,7 @@ const props = defineProps<Props>()
     :id="props.variant + props.question"
     :value="props.variant"
     :checked="props.variant === props.selectedVariant"
+    :disabled="props.disabled"
     input-class="variant-input"
     label-class="variant-label"
   >

@@ -37,7 +37,7 @@ function onChangeVariant(e: Event) {
     </UText>
     <ul @click="onChangeVariant" class="question__variants">
       <li v-for="variant in props.variants" :key="variant" class="question__variant">
-        <QuestionVariant :variant="variant" :question="props.title" :selected-variant="selectedVariant" />
+        <QuestionVariant :disabled="isTestFinished" :variant="variant" :question="props.title" :selected-variant="selectedVariant" />
       </li>
     </ul>
     <p v-if="isTestFinished" class="question__description"><span>Объяснение.</span> {{ props.description }}</p>

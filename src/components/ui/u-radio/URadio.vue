@@ -16,6 +16,7 @@ function onChange(e: Event) {
 const listener = computed(() => (props.needListener ? "change" : ""))
 
 const isChecked = computed(() => props['checked'] ? props.checked: false)
+const isDisabled = computed(() => props['disabled'] ? props.disabled: false)
 </script>
 
 <template>
@@ -26,6 +27,7 @@ const isChecked = computed(() => props['checked'] ? props.checked: false)
     :name="props.name"
     :id="props.id"
     :checked="isChecked"
+    :disabled="isDisabled"
     :value="props.value"
   />
   <label :class="['u-radio', props.labelClass ?? '']" :for="props.id">

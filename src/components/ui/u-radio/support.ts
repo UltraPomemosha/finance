@@ -4,6 +4,7 @@ export interface URadioProps {
   value: string
   needListener: boolean
   checked?: boolean
+  disabled?: boolean
   inputClass?: string
   labelClass?: string
 }

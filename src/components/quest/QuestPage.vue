@@ -21,6 +21,7 @@ const initQuestState = (questions: IQuestion[]): IQuestState => {
 const questState: IQuestState = reactive(initQuestState(QUESTIONS))
 
 function submit() {
+  if (!isTestFinished.value) return
   questTimeStore.setTime("end")
   questResultsStore.setNewResult({
     title: "🌟 Квест по Финансовой грамотности! 🌟",
@@ -31,6 +32,10 @@ function submit() {
     finishTime: questTimeStore.finishTime,
   })
   isTestFinished.value = true
+  scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
 }
 
 onMounted(() => {
