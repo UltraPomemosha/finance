@@ -44,6 +44,11 @@ const router = createRouter({
       name: "quests-result",
       component: () => import("../views/ResultsView.vue"),
     },
+    {
+      path: "/auth",
+      name: "auth",
+      component: () => import("../views/AuthView.vue"),
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (to.name === "quest") return { top: 0 }

@@ -13,9 +13,9 @@ const value = defineModel<string>({
 </script>
 
 <template>
-  <label class="u-input">
+  <label class="u-input" :class="{_error: props.error}">
     <slot name="title"></slot>
-    <input v-model="value" :name="props.name" type="text" class="u-input__input" />
+    <input v-model="value" :name="props.name" :type="props.type" class="u-input__input" />
     <slot name="button"></slot>
   </label>
 </template>
@@ -28,9 +28,13 @@ const value = defineModel<string>({
   &__input {
     margin-top: 10px;
     padding: 16px 12px;
+    width: 100%;
 
     border: 1px solid rgb(85, 85, 85);
     border-radius: 15px;
+    color: $primary-color;
+
+    @extend .text-18;
   }
 
   :slotted(button) {
