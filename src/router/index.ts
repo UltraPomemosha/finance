@@ -45,6 +45,10 @@ const router = createRouter({
       component: () => import("../views/ResultsView.vue"),
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (to.name === "quest") return { top: 0 }
+    else return { top: savedPosition?.top }
+  },
 })
 
 export default router
