@@ -28,6 +28,9 @@ const value = defineModel<string>({
   &__input {
     margin-top: 10px;
     padding: 16px 12px;
+
+    border: 1px solid rgb(85, 85, 85);
+    border-radius: 15px;
   }
 
   :slotted(button) {
