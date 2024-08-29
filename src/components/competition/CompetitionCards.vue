@@ -3,6 +3,7 @@ import { tag } from "@/utils/tag";
 import ULink from "@c/ui/u-link/ULink.vue";
 import UText from "@c/ui/u-text/UText.vue";
 import CompetitionCard from "./CompetitionCard.vue";
+import UTitle from "@c/ui/u-title/UTitle.vue";
 </script>
 
 <template>
@@ -12,7 +13,7 @@ import CompetitionCard from "./CompetitionCard.vue";
         <img src="/src/assets/images/competition-test/waiting.jpeg" alt="waiting" />
       </template>
       <template #content>
-        <UText :tag="tag('h2')" :config="{ size: 36 }">Что Вас ждет?</UText>
+        <UTitle tag="h2">Что Вас ждет?</UTitle>
         <ul class="list">
           <UText :tag="tag('li')" :config="{ size: 24 }">Захватывающий квест.</UText>
           <UText :tag="tag('li')" :config="{ size: 24 }">Интерактивные задания.</UText>
@@ -25,7 +26,7 @@ import CompetitionCard from "./CompetitionCard.vue";
         <img src="/src/assets/images/competition-test/how-to-join.jpeg" alt="How to join" />
       </template>
       <template #content>
-        <UText :tag="tag('h2')" :config="{ size: 36 }">Как участвовать?</UText>
+        <UTitle tag="h2">Как участвовать?</UTitle>
         <ol class="list">
           <UText :tag="tag('li')" :config="{ size: 24 }">Пройдите квест.</UText>
           <UText :tag="tag('li')" :config="{ size: 24 }">Ответьте на вопросы.</UText>

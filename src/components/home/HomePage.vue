@@ -1,22 +1,16 @@
 <script lang="ts" setup>
-import { tag } from "@/utils/tag"
-import UText from "@c/ui/u-text/UText.vue"
-import type { ITextConfig } from "@c/ui/u-text/support"
-import HomeSectionCard from "./HomeSectionCard.vue"
-import { HOME_SECTION_CARDS } from "./support"
+import UTitle from "@c/ui/u-title/UTitle.vue";
+import HomeSectionCard from "./HomeSectionCard.vue";
+import { HOME_SECTION_CARDS } from "./support";
 
-const homePageTitleTag = tag("h1")
-const homePageTitleConfig: ITextConfig = {
-  size: 48,
-}
 </script>
 
 <template>
   <section class="home-page">
-    <UText :tag="homePageTitleTag" :config="homePageTitleConfig" class="home-page__title">
+    <UTitle tag="h1" class="home-page__title">
       Твое финансовое Будущее в твоих руках!
-    </UText>
-    <img src="/src/assets/images/home-welcome.png" alt="" class="home-page__img" />
+    </UTitle>
+    <img src="/src/assets/images/home-welcome.png" alt="Добро пожаловать" class="home-page__img" />
     <div class="home-page__cards">
       <HomeSectionCard
         v-for="card in HOME_SECTION_CARDS"
@@ -40,8 +34,6 @@ const homePageTitleConfig: ITextConfig = {
   &__title {
     grid-row: 1/1;
     grid-column: 1/1;
-    color: $secondary-color;
-    font-family: $secondary-font;
   }
   
   &__img {

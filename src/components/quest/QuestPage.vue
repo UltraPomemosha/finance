@@ -3,6 +3,7 @@ import { useQuestResultsStore } from "@/stores/quest-results/questResults"
 import { useQuestTimeStore } from "@/stores/quest-time/questTime"
 import UButton from "@c/ui/u-button/UButton.vue"
 import ULink from "@c/ui/u-link/ULink.vue"
+import UTitle from "@c/ui/u-title/UTitle.vue"
 import { onMounted, reactive, ref } from "vue"
 import Question from "./Question.vue"
 import { getSuccessAnswersAmount, QUESTIONS, type IQuestion, type IQuestState } from "./support"
@@ -33,7 +34,7 @@ function submit() {
   isTestFinished.value = true
   scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: "smooth",
   })
 }
 
@@ -44,7 +45,7 @@ onMounted(() => {
 
 <template>
   <section class="quest-page">
-    <h1 class="quest-page__title _title">🌟 Квест по Финансовой грамотности! 🌟</h1>
+    <UTitle tag="h1" class="quest-page__title">🌟 Квест по Финансовой грамотности! 🌟</UTitle>
     <Question
       v-for="question in QUESTIONS"
       v-model="questState[question.title]"
@@ -64,12 +65,6 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .quest-page {
-  &__title {
-    @extend .text-48;
-    color: $secondary-color;
-    text-align: center;
-  }
-
   &__question {
     margin-top: 50px;
   }
@@ -85,11 +80,5 @@ onMounted(() => {
       text-decoration: underline;
     }
   }
-}
-</style>
-
-<style lang="scss">
-._title {
-  font-family: $secondary-font;
 }
 </style>

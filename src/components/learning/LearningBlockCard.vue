@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import UTitle from "@c/ui/u-title/UTitle.vue";
 import type { IBlockCard } from "./support";
 
 const props = defineProps<IBlockCard>()
@@ -6,7 +7,7 @@ const props = defineProps<IBlockCard>()
 
 <template>
   <article class="block-card">
-    <h3 class="block-card__title">{{ props.title }}</h3>
+    <UTitle tag="h3" class="block-card__title">{{ props.title }}</UTitle>
     <slot></slot>
     <p class="block-card__description">{{ props.description }}</p>
   </article>
@@ -26,11 +27,9 @@ const props = defineProps<IBlockCard>()
     padding: 10px;
     border-radius: 20px;
     background: $white-smoke-color;
-    text-align: center;
 
-    @extend .text-36;
-    font-family: $secondary-font;
     color: $primary-color;
+    text-align: center;
   }
 
   &__description {

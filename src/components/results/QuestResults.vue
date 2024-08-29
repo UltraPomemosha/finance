@@ -1,12 +1,13 @@
 <script lang="ts" setup>
 import type { IQuestResults } from "@/stores/quest-results/support";
+import UTitle from "@c/ui/u-title/UTitle.vue";
 
 const props = defineProps<IQuestResults>()
 </script>
 
 <template>
   <article class="quest-results">
-    <h3 class="quest-results__title">{{ props.title }}</h3>
+    <UTitle tag="h4" class="quest-results__title">{{ props.title }}</UTitle>
     <p class="quest-results__answers">
       Дан ответ на <span>{{ props.answers.success }}</span> из <span>{{ props.answers.all }}</span> вопросов
     </p>
@@ -27,7 +28,6 @@ const props = defineProps<IQuestResults>()
   }
 
   &__title {
-    @extend .text-24;
     color: $primary-color;
   }
 

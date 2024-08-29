@@ -1,22 +1,9 @@
 <script lang="ts" setup>
-import { tag } from "@/utils/tag";
-import UText from "@c/ui/u-text/UText.vue";
-import type { ITextProps } from "@c/ui/u-text/support";
-import CompetitionCards from "./CompetitionCards.vue";
-
-const pageTitle: ITextProps = {
-  tag: tag("h1"),
-  config: {
-    size: 48,
-  },
-}
-
-const pageSubTitle: ITextProps = {
-  tag: tag("h2"),
-  config: {
-    size: 36,
-  },
-}
+import { tag } from "@/utils/tag"
+import UText from "@c/ui/u-text/UText.vue"
+import type { ITextProps } from "@c/ui/u-text/support"
+import UTitle from "../ui/u-title/UTitle.vue"
+import CompetitionCards from "./CompetitionCards.vue"
 
 const pageDescription: ITextProps = {
   tag: tag("p"),
@@ -28,12 +15,10 @@ const pageDescription: ITextProps = {
 
 <template>
   <section class="competition-page">
-    <UText :tag="pageTitle.tag" :config="pageTitle.config" class="competition-page__title">
-      Запуск нового конкурса
-    </UText>
-    <UText :tag="pageSubTitle.tag" :config="pageSubTitle.config" class="competition-page__subtitle">
+    <UTitle tag="h1" class="competition-page__title"> Запуск нового конкурса </UTitle>
+    <UTitle tag="h2" class="competition-page__subtitle">
       Ребята и девчата, приглашаем Вас пройти увлекательный квест по финансовой грамотности!
-    </UText>
+    </UTitle>
     <UText :tag="pageDescription.tag" :config="pageDescription.config" class="competition-page__description">
       Погружайтесь в мир финансов через захватывающие задания и проверяйте свои знания! 🚀
     </UText>
@@ -53,10 +38,6 @@ const pageDescription: ITextProps = {
     width: 100%;
     min-width: 280px;
     font-family: $secondary-font;
-  }
-
-  &__title {
-    color: $secondary-color;
   }
 
   &__subtitle {

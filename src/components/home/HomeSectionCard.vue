@@ -2,17 +2,11 @@
 import { tag } from "@/utils/tag"
 import type { ITextProps } from "@c/ui/u-text/support"
 import UText from "@c/ui/u-text/UText.vue"
+import UTitle from "@c/ui/u-title/UTitle.vue"
 import UIconGet from "../ui/u-icon/UIconGet.vue"
 import type { ISectionCard } from "./support"
 
 const props = defineProps<ISectionCard>()
-
-const cardTitle: ITextProps = {
-  tag: tag("h2"),
-  config: {
-    size: 24,
-  },
-}
 
 const cardDescription: ITextProps = {
   tag: tag("p"),
@@ -25,9 +19,9 @@ const cardDescription: ITextProps = {
 <template>
   <article class="section-card">
     <UIconGet :icon-name="props.iconName" :size="40" class="section-card__icon" />
-    <UText :tag="cardTitle.tag" :config="cardTitle.config" class="section-card__title">
+    <UTitle tag="h4" class="section-card__title">
       {{ props.title }}
-    </UText>
+    </UTitle>
     <UText :tag="cardDescription.tag" :config="cardDescription.config" class="section-card__description">
       {{ props.description }}
     </UText>
@@ -60,7 +54,6 @@ const cardDescription: ITextProps = {
   }
 
   &__title {
-    color: $secondary-color;
     grid-column: 2/2;
   }
 

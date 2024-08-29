@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import type { ITextProps } from "@/components/ui/u-text/support"
-import { tag } from "@/utils/tag"
-import UText from "@c/ui/u-text/UText.vue"
+import UTitle from "@c/ui/u-title/UTitle.vue"
 import QuestionVariant from "./QuestionVariant.vue"
 import { type IQuestion } from "./support"
 
@@ -15,13 +13,6 @@ const selectedVariant = defineModel<string>({
   required: true,
 })
 
-const questionTitle: ITextProps = {
-  tag: tag("h2"),
-  config: {
-    size: 32,
-  },
-}
-
 function onChangeVariant(e: Event) {
   const tag = (e.target as HTMLElement).tagName
   if (tag === "INPUT") {
@@ -32,9 +23,9 @@ function onChangeVariant(e: Event) {
 
 <template>
   <article class="question">
-    <UText :tag="questionTitle.tag" :config="questionTitle.config" class="question__title _title">
+    <UTitle tag="h3" class="question__title">
       {{ props.title }}
-    </UText>
+    </UTitle>
     <ul @click="onChangeVariant" class="question__variants">
       <li v-for="variant in props.variants" :key="variant" class="question__variant">
         <QuestionVariant :disabled="isTestFinished" :variant="variant" :question="props.title" :selected-variant="selectedVariant" />
