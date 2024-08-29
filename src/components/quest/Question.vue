@@ -1,14 +1,18 @@
 <script lang="ts" setup>
-import type { ITextProps } from "@/components/ui/u-text/support";
-import { tag } from "@/utils/tag";
-import UText from "@c/ui/u-text/UText.vue";
-import QuestionVariant from "./QuestionVariant.vue";
-import { type IQuestion } from "./support";
+import type { ITextProps } from "@/components/ui/u-text/support"
+import { tag } from "@/utils/tag"
+import UText from "@c/ui/u-text/UText.vue"
+import QuestionVariant from "./QuestionVariant.vue"
+import { type IQuestion } from "./support"
 
-const props = defineProps<Omit<IQuestion, 'rightVariant'>>()
+interface Props extends Omit<IQuestion, "rightVariant">{
+  isTestFinished: boolean
+}
+
+const props = defineProps<Props>()
 
 const selectedVariant = defineModel<string>({
-  required: true
+  required: true,
 })
 
 const questionTitle: ITextProps = {
@@ -20,7 +24,7 @@ const questionTitle: ITextProps = {
 
 function onChangeVariant(e: Event) {
   const tag = (e.target as HTMLElement).tagName
-  if (tag === 'INPUT') {
+  if (tag === "INPUT") {
     selectedVariant.value = (e.target as HTMLInputElement).value
   }
 }
@@ -36,20 +40,19 @@ function onChangeVariant(e: Event) {
         <QuestionVariant :variant="variant" :question="props.title" :selected-variant="selectedVariant" />
       </li>
     </ul>
-    <p class="question__description">
-      <span>Объяснение.</span> {{ props.description }}
-    </p>
+    <p v-if="isTestFinished" class="question__description"><span>Объяснение.</span> {{ props.description }}</p>
   </article>
 </template>
 
 <style lang="scss" scoped>
 .question {
-
   &__variant {
     margin-top: 30px;
     width: max-content;
 
-    &:hover, &:focus, &:focus-visible {
+    &:hover,
+    &:focus,
+    &:focus-visible {
       outline: 2px solid $secondary-color;
       outline-offset: 1px;
     }
