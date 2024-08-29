@@ -55,6 +55,7 @@ const cardDescription: ITextProps = {
 
   &__title {
     grid-column: 2/2;
+    color: $secondary-color;
   }
 
   &__description {

@@ -31,6 +31,7 @@ const props = defineProps<Omit<ILearningBlock, "img">>()
     color: $white-color;
     text-align: center;
     text-transform: uppercase;
+    font-family: $secondary-font;
   }
 }
 </style>

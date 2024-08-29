@@ -30,6 +30,7 @@ const props = defineProps<IBlockCard>()
 
     color: $primary-color;
     text-align: center;
+    font-family: $secondary-font;
   }
 
   &__description {

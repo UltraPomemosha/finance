@@ -2,8 +2,8 @@
 import { tag } from "@/utils/tag";
 import ULink from "@c/ui/u-link/ULink.vue";
 import UText from "@c/ui/u-text/UText.vue";
-import CompetitionCard from "./CompetitionCard.vue";
 import UTitle from "@c/ui/u-title/UTitle.vue";
+import CompetitionCard from "./CompetitionCard.vue";
 </script>
 
 <template>
@@ -69,6 +69,9 @@ import UTitle from "@c/ui/u-title/UTitle.vue";
     list-style: disc inside;
     & > li {
       list-style: disc inside;
+      &::marker {
+        color: $secondary-color;
+      }
     }
   }
 
