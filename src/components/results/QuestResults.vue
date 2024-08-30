@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import type { IQuestResults } from "@/stores/quest-results/support";
 import UTitle from "@c/ui/u-title/UTitle.vue";
+import QuestTable from "./QuestTable.vue";
+import { TABLE_DATA } from "./support";
 
 const props = defineProps<IQuestResults>()
 </script>
@@ -14,6 +16,7 @@ const props = defineProps<IQuestResults>()
     <p class="quest-results__time">
       Тест пройден за <span>{{ props.finishTime }}</span> секунд
     </p>
+    <QuestTable :data="TABLE_DATA" :competition-title="props.title" />
   </article>
 </template>
 
