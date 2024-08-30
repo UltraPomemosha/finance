@@ -5,6 +5,7 @@ import UButton from "@c/ui/u-button/UButton.vue"
 import ULink from "@c/ui/u-link/ULink.vue"
 import UTitle from "@c/ui/u-title/UTitle.vue"
 import { onMounted, reactive, ref } from "vue"
+import { TABLE_DATA } from "../results/support"
 import Question from "./Question.vue"
 import { getSuccessAnswersAmount, QUESTIONS, type IQuestion, type IQuestState } from "./support"
 
@@ -35,6 +36,14 @@ function submit() {
   scrollTo({
     top: 0,
     behavior: "smooth",
+  })
+  TABLE_DATA.push({
+    name: 'Анонимный',
+    answers: {
+      success: getSuccessAnswersAmount(QUESTIONS, questState),
+      all: QUESTIONS.length,
+    },
+    finishTime: questTimeStore.finishTime
   })
 }
 
