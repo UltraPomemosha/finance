@@ -57,9 +57,7 @@ onMounted(() => {
       class="quest-page__question"
     />
     <UButton @click="submit" class="quest-page__button" :disabled="isTestFinished"> Отправить </UButton>
-    <ULink type="link" :title-config="{ size: 20 }" to="/results" class="quest-page__go-to-results">
-      Перейти к результатам
-    </ULink>
+    <ULink type="link" to="/results" class="quest-page__go-to-results"> Перейти к результатам </ULink>
   </section>
 </template>
 
@@ -75,10 +73,10 @@ onMounted(() => {
 
   &__go-to-results {
     margin-top: 10px;
-    :deep(span) {
-      color: $secondary-color;
-      text-decoration: underline;
-    }
+
+    @extend .text-20;
+    color: $secondary-color;
+    text-decoration: underline;
   }
 }
 </style>

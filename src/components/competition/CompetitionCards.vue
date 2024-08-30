@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import { tag } from "@/utils/tag";
-import ULink from "@c/ui/u-link/ULink.vue";
-import UText from "@c/ui/u-text/UText.vue";
-import UTitle from "@c/ui/u-title/UTitle.vue";
-import CompetitionCard from "./CompetitionCard.vue";
+import { tag } from "@/utils/tag"
+import ULink from "@c/ui/u-link/ULink.vue"
+import UText from "@c/ui/u-text/UText.vue"
+import UTitle from "@c/ui/u-title/UTitle.vue"
+import CompetitionCard from "./CompetitionCard.vue"
 </script>
 
 <template>
@@ -44,7 +44,7 @@ import CompetitionCard from "./CompetitionCard.vue";
           <li>
             <UText :tag="tag('p')" :config="{ size: 36 }" class="text">📍 Где?</UText>
             &nbsp;
-            <ULink type="link" :title-config="{ size: 36 }" to="/competition/1" class="text clickable-link">Жми сюда</ULink>
+            <ULink type="link" to="/competition/1" class="text clickable-link">Жми сюда</ULink>
           </li>
         </ul>
       </template>
@@ -89,10 +89,10 @@ import CompetitionCard from "./CompetitionCard.vue";
 
   .clickable-link {
     display: inline-block;
-    &:deep(span) {
-      color: $secondary-color;
-      text-decoration: underline;
-    }
+
+    @extend .text-36;
+    color: $secondary-color;
+    text-decoration: underline;
   }
 }
 </style>
