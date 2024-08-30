@@ -1,12 +1,7 @@
-export interface ILearningBlock {
-  title: string
-  card: IBlockCard
-  img: string
-}
+import type { UBlock } from "@c/ui/u-block/support"
 
-export interface IBlockCard {
-  title: string
-  description: string
+export interface ILearningBlock extends UBlock {
+  img: string
 }
 
 // constants
