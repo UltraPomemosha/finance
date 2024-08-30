@@ -1,9 +1,8 @@
 <script lang="ts" setup>
+import { src } from "@/utils/src";
 import UBlock from "@c/ui/u-block/UBlock.vue";
 import UTitle from "@c/ui/u-title/UTitle.vue";
 import { LEARNING_BLOCKS } from "./support";
-
-const imageSrc = (src: string): string => (new Image().src = src)
 </script>
 
 <template>
@@ -16,7 +15,7 @@ const imageSrc = (src: string): string => (new Image().src = src)
       :key="block.title"
       class="learning-page__block"
     >
-      <img loading="lazy" :src="imageSrc(block.img)" :alt="block.card.title" />
+      <img loading="lazy" :src="src(block.img)" :alt="block.card.title" />
     </UBlock>
   </section>
 </template>
