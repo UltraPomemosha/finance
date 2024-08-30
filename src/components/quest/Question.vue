@@ -3,7 +3,7 @@ import UTitle from "@c/ui/u-title/UTitle.vue";
 import QuestionVariant from "./QuestionVariant.vue";
 import { type IQuestion } from "./support";
 
-interface Props extends Omit<IQuestion, "rightVariant">{
+interface Props extends IQuestion {
   isTestFinished: boolean
 }
 
@@ -26,12 +26,38 @@ function onChangeVariant(e: Event) {
     <UTitle tag="h3" class="question__title">
       {{ props.title }}
     </UTitle>
-    <ul @click="onChangeVariant" class="question__variants">
+    <template v-if="props.isTestFinished">
+      <ul @click="onChangeVariant" class="question__variants">
+        <li
+          v-for="variant in props.variants"
+          :key="variant"
+          class="question__variant"
+          :class="[
+            { _error: variant === selectedVariant && variant !== props.rightVariant },
+            { _right: variant === props.rightVariant },
+            { _disabled: props.isTestFinished },
+          ]"
+        >
+          <QuestionVariant
+            :disabled="props.isTestFinished"
+            :variant="variant"
+            :question="props.title"
+            :selected-variant="selectedVariant"
+          />
+        </li>
+      </ul>
+      <p class="question__description"><span>Объяснение.</span> {{ props.description }}</p>
+    </template>
+    <ul v-else @click="onChangeVariant" class="question__variants">
       <li v-for="variant in props.variants" :key="variant" class="question__variant">
-        <QuestionVariant :disabled="isTestFinished" :variant="variant" :question="props.title" :selected-variant="selectedVariant" />
+        <QuestionVariant
+          :disabled="props.isTestFinished"
+          :variant="variant"
+          :question="props.title"
+          :selected-variant="selectedVariant"
+        />
       </li>
     </ul>
-    <p v-if="isTestFinished" class="question__description"><span>Объяснение.</span> {{ props.description }}</p>
   </article>
 </template>
 
@@ -44,11 +70,38 @@ function onChangeVariant(e: Event) {
     margin-top: 30px;
     width: max-content;
 
+    &._error {
+      :deep(p) {
+        color: red;
+      }
+      :deep(.variant-box){
+        background-color: red !important;
+      }
+    }
+
+    &._right {
+      :deep(p) {
+        color: green;
+      }
+      :deep(.variant-box){
+        background-color: green !important;
+      }
+    }
+
     &:hover,
     &:focus,
     &:focus-visible {
       outline: 2px solid $secondary-color;
       outline-offset: 1px;
+    }
+
+    &._disabled {
+      &:hover,
+      &:focus,
+      &:focus-visible {
+        outline: 0;
+        outline-offset: 0;
+      }
     }
   }
 

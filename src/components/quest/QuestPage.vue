@@ -53,6 +53,7 @@ onMounted(() => {
       :is-test-finished="isTestFinished"
       :title="question.title"
       :variants="question.variants"
+      :right-variant="question.rightVariant"
       :key="question.title"
       class="quest-page__question"
     />

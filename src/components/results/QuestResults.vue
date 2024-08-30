@@ -9,7 +9,7 @@ const props = defineProps<IQuestResults>()
   <article class="quest-results">
     <UTitle tag="h4" class="quest-results__title">{{ props.title }}</UTitle>
     <p class="quest-results__answers">
-      Дан ответ на <span>{{ props.answers.success }}</span> из <span>{{ props.answers.all }}</span> вопросов
+      Правильный ответ дан на <span>{{ props.answers.success }}</span> из <span>{{ props.answers.all }}</span> вопросов
     </p>
     <p class="quest-results__time">
       Тест пройден за <span>{{ props.finishTime }}</span> секунд
