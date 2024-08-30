@@ -10,7 +10,7 @@ import CompetitionCard from "./CompetitionCard.vue";
   <div class="competition-cards">
     <CompetitionCard>
       <template #image>
-        <img src="/src/assets/images/competition-test/waiting.jpeg" alt="waiting" />
+        <img loading="lazy" src="/src/assets/images/competition-test/waiting.jpeg" alt="waiting" />
       </template>
       <template #content>
         <UTitle tag="h2">Что Вас ждет?</UTitle>
@@ -23,7 +23,7 @@ import CompetitionCard from "./CompetitionCard.vue";
     </CompetitionCard>
     <CompetitionCard>
       <template #image>
-        <img src="/src/assets/images/competition-test/how-to-join.jpeg" alt="How to join" />
+        <img loading="lazy" src="/src/assets/images/competition-test/how-to-join.jpeg" alt="How to join" />
       </template>
       <template #content>
         <UTitle tag="h2">Как участвовать?</UTitle>
@@ -36,7 +36,7 @@ import CompetitionCard from "./CompetitionCard.vue";
     </CompetitionCard>
     <CompetitionCard>
       <template #image>
-        <img src="/src/assets/images/competition-test/start.jpeg" alt="start" />
+        <img loading="lazy" src="/src/assets/images/competition-test/start.jpeg" alt="start" />
       </template>
       <template #content>
         <ul>

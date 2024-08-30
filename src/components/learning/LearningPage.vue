@@ -16,7 +16,7 @@ const imageSrc = (src: string): string => (new Image().src = src)
       :key="block.title"
       class="learning-page__block"
     >
-      <img :src="imageSrc(block.img)" :alt="block.card.title" />
+      <img loading="lazy" :src="imageSrc(block.img)" :alt="block.card.title" />
     </LearningBlock>
   </section>
 </template>

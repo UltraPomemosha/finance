@@ -10,7 +10,7 @@ import { HOME_SECTION_CARDS } from "./support";
     <UTitle tag="h1" class="home-page__title">
       Твое финансовое Будущее в твоих руках!
     </UTitle>
-    <img src="/src/assets/images/home-welcome.png" alt="Добро пожаловать" class="home-page__img" />
+    <img loading="lazy" src="/src/assets/images/home-welcome.png" alt="Добро пожаловать" class="home-page__img" />
     <div class="home-page__cards">
       <HomeSectionCard
         v-for="card in HOME_SECTION_CARDS"

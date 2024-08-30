@@ -53,7 +53,7 @@ const hasPasswordError = computed(() => {
       </UInput>
       <UButton class="auth-page__submit"> Войти </UButton>
     </form>
-    <img src="/src/assets/images/auth-img.png" alt="Авторизация" class="auth-page__img" />
+    <img loading="lazy" src="/src/assets/images/auth-img.png" alt="Авторизация" class="auth-page__img" />
   </section>
 </template>
 

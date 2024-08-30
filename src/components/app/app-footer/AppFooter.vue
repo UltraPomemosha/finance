@@ -24,7 +24,7 @@ const copyrightTag = "p" as unknown as HTMLElementTagNameMap
           <FooterList :title="CONTACTS_LIST.title" :data="CONTACTS_LIST.data" class="app-footer__contacts" />
           <FooterList :title="CALL_LIST.title" :data="CALL_LIST.data" class="app-footer__call" />
         </div>
-        <img src="/src/assets/images/footer-robot.png" alt="Cute Robot)" class="cute-robot" />
+        <img loading="lazy" src="/src/assets/images/footer-robot.png" alt="Cute Robot)" class="cute-robot" />
       </AppSmallContainer>
     </AppContainer>
   </footer>
