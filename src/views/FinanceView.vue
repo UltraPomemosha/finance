@@ -1,10 +1,13 @@
 <script lang="ts" setup>
-import AppContainer from "@c/app/app-container/AppContainer.vue";
+import AppContainer from "@c/app/app-container/AppContainer.vue"
+import FinancePage from "@c/finance/FinancePage.vue"
 </script>
 
 <template>
   <main>
-    <AppContainer></AppContainer>
+    <AppContainer>
+      <FinancePage />
+    </AppContainer>
   </main>
 </template>
 
