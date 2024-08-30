@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import UTitle from "@c/ui/u-title/UTitle.vue"
-import UIconGet from "../ui/u-icon/UIconGet.vue"
-import type { ISectionCard } from "./support"
+import UTitle from "@c/ui/u-title/UTitle.vue";
+import UIconGet from "../ui/u-icon/UIconGet.vue";
+import type { ISectionCard } from "./support";
 
 const props = defineProps<ISectionCard>()
 </script>
@@ -23,7 +23,7 @@ const props = defineProps<ISectionCard>()
   display: grid;
   grid-template-columns: max-content 1fr;
   grid-template-rows: 1fr 1fr;
-  row-gap: 20px;
+  row-gap: 10px;
   column-gap: 40px;
 
   position: relative;
@@ -40,11 +40,12 @@ const props = defineProps<ISectionCard>()
   &__icon {
     grid-row: 1/3;
     align-self: center;
-    margin-top: -20px; // {icon size} / 2
+    margin-top: -10px; // {icon size} / 2
   }
 
   &__title {
     grid-column: 2/2;
+    align-self: flex-end;
     color: $secondary-color;
   }
 
