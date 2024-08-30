@@ -1,19 +1,9 @@
 <script lang="ts" setup>
-import { tag } from "@/utils/tag"
-import type { ITextProps } from "@c/ui/u-text/support"
-import UText from "@c/ui/u-text/UText.vue"
 import UTitle from "@c/ui/u-title/UTitle.vue"
 import UIconGet from "../ui/u-icon/UIconGet.vue"
 import type { ISectionCard } from "./support"
 
 const props = defineProps<ISectionCard>()
-
-const cardDescription: ITextProps = {
-  tag: tag("p"),
-  config: {
-    size: 16,
-  },
-}
 </script>
 
 <template>
@@ -22,9 +12,9 @@ const cardDescription: ITextProps = {
     <UTitle tag="h4" class="section-card__title">
       {{ props.title }}
     </UTitle>
-    <UText :tag="cardDescription.tag" :config="cardDescription.config" class="section-card__description">
+    <p class="section-card__description">
       {{ props.description }}
-    </UText>
+    </p>
   </article>
 </template>
 
@@ -59,8 +49,9 @@ const cardDescription: ITextProps = {
   }
 
   &__description {
-    color: $primary-color;
     grid-column: 2/2;
+    @extend .text-16;
+    color: $primary-color;
   }
 }
 </style>

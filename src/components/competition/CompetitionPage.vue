@@ -1,16 +1,6 @@
 <script lang="ts" setup>
-import { tag } from "@/utils/tag"
-import UText from "@c/ui/u-text/UText.vue"
-import type { ITextProps } from "@c/ui/u-text/support"
 import UTitle from "../ui/u-title/UTitle.vue"
 import CompetitionCards from "./CompetitionCards.vue"
-
-const pageDescription: ITextProps = {
-  tag: tag("p"),
-  config: {
-    size: 24,
-  },
-}
 </script>
 
 <template>
@@ -19,13 +9,11 @@ const pageDescription: ITextProps = {
     <UTitle tag="h2" class="competition-page__subtitle">
       Ребята и девчата, приглашаем Вас пройти увлекательный квест по финансовой грамотности!
     </UTitle>
-    <UText :tag="pageDescription.tag" :config="pageDescription.config" class="competition-page__description">
+    <p class="competition-page__text">
       Погружайтесь в мир финансов через захватывающие задания и проверяйте свои знания! 🚀
-    </UText>
+    </p>
     <CompetitionCards />
-    <UText :tag="pageDescription.tag" :config="pageDescription.config">
-      Не упустите шанс проверить свои знания и выиграть призы! 🎁💡
-    </UText>
+    <p class="competition-page__text">Не упустите шанс проверить свои знания и выиграть призы! 🎁💡</p>
   </section>
 </template>
 
@@ -45,8 +33,10 @@ const pageDescription: ITextProps = {
     margin-top: 10px;
   }
 
-  &__description {
+  &__text {
     margin-top: 30px;
+    @extend .text-24;
+    color: $primary-color;
   }
 }
 </style>

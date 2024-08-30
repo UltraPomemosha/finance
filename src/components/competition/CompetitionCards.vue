@@ -1,7 +1,5 @@
 <script lang="ts" setup>
-import { tag } from "@/utils/tag"
 import ULink from "@c/ui/u-link/ULink.vue"
-import UText from "@c/ui/u-text/UText.vue"
 import UTitle from "@c/ui/u-title/UTitle.vue"
 import CompetitionCard from "./CompetitionCard.vue"
 </script>
@@ -15,9 +13,9 @@ import CompetitionCard from "./CompetitionCard.vue"
       <template #content>
         <UTitle tag="h2">Что Вас ждет?</UTitle>
         <ul class="list">
-          <UText :tag="tag('li')" :config="{ size: 24 }">Захватывающий квест.</UText>
-          <UText :tag="tag('li')" :config="{ size: 24 }">Интерактивные задания.</UText>
-          <UText :tag="tag('li')" :config="{ size: 24 }">Призы и награды.</UText>
+          <li class="text-24">Захватывающий квест.</li>
+          <li class="text-24">Интерактивные задания.</li>
+          <li class="text-24">Призы и награды.</li>
         </ul>
       </template>
     </CompetitionCard>
@@ -28,9 +26,9 @@ import CompetitionCard from "./CompetitionCard.vue"
       <template #content>
         <UTitle tag="h2">Как участвовать?</UTitle>
         <ol class="list">
-          <UText :tag="tag('li')" :config="{ size: 24 }">Пройдите квест.</UText>
-          <UText :tag="tag('li')" :config="{ size: 24 }">Ответьте на вопросы.</UText>
-          <UText :tag="tag('li')" :config="{ size: 24 }">Получите результаты.</UText>
+          <li class="text-24">Пройдите квест.</li>
+          <li  class="text-24">Ответьте на вопросы.</li>
+          <li class="text-24">Получите результаты.</li>
         </ol>
       </template>
     </CompetitionCard>
@@ -40,9 +38,9 @@ import CompetitionCard from "./CompetitionCard.vue"
       </template>
       <template #content>
         <ul>
-          <li><UText :tag="tag('p')" :config="{ size: 36 }" class="text">📅 Когда? 30.08.2024 </UText></li>
+          <li><p class="text">📅 Когда? 30.08.2024</p></li>
           <li>
-            <UText :tag="tag('p')" :config="{ size: 36 }" class="text">📍 Где?</UText>
+            <p class="text">📍 Где?</p>
             &nbsp;
             <ULink type="link" to="/competition/1" class="text clickable-link">Жми сюда</ULink>
           </li>
@@ -69,6 +67,7 @@ import CompetitionCard from "./CompetitionCard.vue"
     list-style: disc inside;
     & > li {
       list-style: disc inside;
+      color: $primary-color;
       &::marker {
         color: $secondary-color;
       }
@@ -79,18 +78,23 @@ import CompetitionCard from "./CompetitionCard.vue"
     list-style: inside decimal;
     & > li {
       list-style: inside decimal;
+      color: $primary-color;
+    }
+    ::marker {
+      color: #000;
     }
   }
 
   .text {
     display: inline-block;
     font-family: $secondary-font;
+
+    @extend .text-36;
   }
 
   .clickable-link {
     display: inline-block;
 
-    @extend .text-36;
     color: $secondary-color;
     text-decoration: underline;
   }
