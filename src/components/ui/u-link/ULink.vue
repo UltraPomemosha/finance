@@ -18,6 +18,7 @@ const props = defineProps<IULinkProps>()
 .u-link {
   padding: $safe-padding;
   display: block;
+  color: $primary-color;
   transition: color 0.3s linear;
 
   &:hover {
